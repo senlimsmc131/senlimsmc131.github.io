@@ -1,0 +1,179 @@
+/* 基本設定 */
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* 明るい背景色 */
+    color: #333; /* 濃いめの文字色 */
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* 小さい画面で折り返す */
+    align-items: center;
+    gap: 20px; /* 要素間のスペース */
+    margin-bottom: 30px;
+}
+
+.content-wrapper p {
+    flex: 1; /* 残りのスペースを埋める */
+    min-width: 280px; /* 最小幅を設定して折り返しを制御 */
+}
+
+/* ヘッダー */
+header {
+    background-color: #4CAF50; /* 緑系のメインカラー */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2.8em;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* メインコンテンツ */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee; /* セクション間の区切り線 */
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    color: #388E3C; /* ヘッダーより少し濃い緑 */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #4CAF50;
+}
+
+/* 画像 */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* 折り返した時に縮まないようにする */
+}
+
+/* リスト */
+ul, ol {
+    list-style-position: inside;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+ul li, ol li {
+    background-color: #e8f5e9; /* リスト項目の背景色 */
+    margin-bottom: 8px;
+    padding: 12px 15px;
+    border-left: 5px solid #66BB6A; /* 左側のアクセントライン */
+    border-radius: 4px;
+}
+
+/* リンク */
+a {
+    color: #1976D2; /* 青系のリンク色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1565C0; /* ホバー時の色 */
+    text-decoration: underline;
+}
+
+/* フッター */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* 縦並びにする */
+        align-items: flex-start;
+    }
+
+    .content-wrapper .responsive-image {
+        width: 100%; /* 小さい画面では画像をフル幅に */
+        margin-bottom: 15px;
+    }
+
+    .content-wrapper p {
+        min-width: unset; /* 最小幅の指定を解除 */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
